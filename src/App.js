@@ -3,7 +3,6 @@ import "./App.css";
 import ColorBox from "./ColorBox";
 import NavBar from "./NavBar";
 import colors from "./colors";
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -11,7 +10,7 @@ class App extends Component {
       colors,
       level: 500,
       showingAllColors: true,
-      individualColors: []
+      currentFormat: "hex"
     };
     this.changeColors = this.changeColors.bind(this);
     this.changeFormat = this.changeFormat.bind(this);
@@ -21,7 +20,7 @@ class App extends Component {
   navigateBack(){
     this.setState({
       showingAllColors: true,
-      individualColors: []
+      colors
     });
   }
   changeColors(val) {
@@ -30,7 +29,9 @@ class App extends Component {
     });
   }
   changeFormat(to) {
-    debugger
+    this.setState({
+      currentFormat: to === "hex" ? "rgb" : "hex"
+    })
   }
   showIndividualColor(colorToFilterBy) {
     let individualColors = [];
@@ -42,21 +43,18 @@ class App extends Component {
     }
     this.setState({
       showingAllColors: false,
-      individualColors
+      colors: {[this.state.level]: individualColors }
     });
   }
   render() {
-    const boxesToDisplay = this.state.showingAllColors
-      ? this.state.colors[this.state.level]
-      : this.state.individualColors;
-    const colorBoxes = boxesToDisplay.map(color => (
+    const colorBoxes = this.state.colors[this.state.level].map(color => (
       <ColorBox
         handleIndividualColor={this.showIndividualColor}
         level={this.state.level}
         individualColor={color.palette_id}
         showingAllColors={this.state.showingAllColors}
-        key={color.color}
-        background={color.color}
+        key={color.name}
+        background={color[this.state.currentFormat]}
         name={color.name}
       />
     ));

@@ -19,7 +19,8 @@ class NavBar extends Component {
     this.props.handleColorVal(val);
   }
   handleChange(event) {
-    this.props.handleFormatChange(event.target.value)
+    const changeValue = event.target.value.includes("#") ? "rgb" : "hex" 
+    this.props.handleFormatChange(changeValue)
     this.setState({ value: event.target.value });
   }
   render() {
@@ -45,11 +46,8 @@ class NavBar extends Component {
                 onChange={this.handleChange}
               >
                 <option value="HEX - #1234EF">HEX - #1234EF</option>
-                <option value="HEX - 1234EF">HEX - 1234EF</option>
                 <option value="RGB - (255,255,255)">RGB - (255,255,255)</option>
-                <option value="RGBA - (12,12,12,1.0)">
                   RGB - (12,12,12,1.0)
-                </option>
               </select>
 
         </header>

@@ -5,6 +5,7 @@
   "dependencies": {
     "rc-slider": "^8.6.5",
     "react": "^16.8.1",
+    "react-copy-to-clipboard": "^5.0.1",
     "react-dom": "^16.8.1",
     "react-scripts": "2.1.5"
   },
