@@ -20,12 +20,11 @@ class ColorBox extends PureComponent {
       <div className="color"  style={{background: this.props.background}}>
         <div className="copy-area" >
           <span className="label">{this.props.name} </span>
-          <span onClick={this.copyInfo} className="more">COPY</span>
+          <CopyToClipboard text={this.props.background}>
+            <button>Copy</button>
+          </CopyToClipboard>
         </div>
 
-        <CopyToClipboard text={this.props.background}>
-          <button>Copy to clipboard with button</button>
-        </CopyToClipboard>
         
 
         {this.props.showingAllColors &&

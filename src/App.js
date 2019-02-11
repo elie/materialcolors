@@ -63,7 +63,9 @@ class App extends Component {
       <div>
         <NavBar handleFormatChange={this.changeFormat} isShowingAllColors={this.state.showingAllColors} handleColorVal={this.changeColors} />
         <div className="App colors">{colorBoxes}</div>
-        {!this.state.showingAllColors && <span className="more" onClick={this.navigateBack}>GO BACK</span>}
+        <div>
+          {!this.state.showingAllColors && <span className="more" onClick={this.navigateBack}>GO BACK</span>}
+        </div>
       </div>
     );
   }
