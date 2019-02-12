@@ -1,0 +1,27 @@
+.color {
+  margin: 0 auto;
+  height: 100px;
+  display: inline-block;
+  width:20%;
+  position: relative;
+}
+
+.copy-button {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+.see-more {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  cursor: pointer;
+  background: 1px solid black;
+}
+
+.box-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

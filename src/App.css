@@ -8,12 +8,6 @@ body {
   text-align: center;
 }
 
-.colors {
-    width: 200px;
-    height: 200px;
-    padding-top: 60px;
-}
-
 
 .colors, .md-select *, .md-select :after, .md-select :before, .noUi-pips, .noUi-pips *, header .tweet, header .usepanda {
     box-sizing: border-box;

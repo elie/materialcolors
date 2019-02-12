@@ -2,8 +2,9 @@ import "rc-slider/assets/index.css";
 
 import React, { Component } from "react";
 import Slider from "rc-slider";
+import "./NavBar.css"
 
-const style = { width: 400, margin: 0, top: "20px", position: "absolute" };
+const style = { width: 400, display: "inline-block", margin: "10px" };
 
 class NavBar extends Component {
   constructor(props) {
@@ -19,18 +20,24 @@ class NavBar extends Component {
     this.props.handleColorVal(val);
   }
   handleChange(event) {
-    const changeValue = event.target.value.includes("#") ? "rgb" : "hex" 
-    this.props.handleFormatChange(changeValue)
+    const changeValue = event.target.value.includes("#") ? "rgb" : "hex";
+    this.props.handleFormatChange(changeValue);
     this.setState({ value: event.target.value });
   }
   render() {
     return (
       <div>
         <header>
+        <div className="navbar-brand">
           Material Color Picker
+        </div>
+          <select value={this.state.value} onChange={this.handleChange}>
+            <option value="HEX - #1234EF">HEX - #1234EF</option>
+            <option value="RGB - (255,255,255)">RGB - (255,255,255)</option>
+            RGB - (12,12,12,1.0)
+          </select>
           {this.props.isShowingAllColors && (
             <div style={style}>
-              <p>Basic Slider</p>
               <Slider
                 step={10}
                 defaultValue={50}
@@ -40,16 +47,6 @@ class NavBar extends Component {
               />
             </div>
           )}
-
-              <select
-                value={this.state.value}
-                onChange={this.handleChange}
-              >
-                <option value="HEX - #1234EF">HEX - #1234EF</option>
-                <option value="RGB - (255,255,255)">RGB - (255,255,255)</option>
-                  RGB - (12,12,12,1.0)
-              </select>
-
         </header>
       </div>
     );
