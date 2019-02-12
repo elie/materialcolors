@@ -70,7 +70,11 @@ class App extends Component {
         <div className="App colors">{colorBoxes}</div>
         <div>
           {!this.state.showingAllColors && (
-            <button onClick={this.navigateBack}>GO BACK</button>
+            <div className="color back">
+              <span className="go-back" onClick={this.navigateBack}>
+                GO BACK
+              </span>
+            </div>
           )}
         </div>
       </div>

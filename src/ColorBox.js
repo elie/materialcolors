@@ -5,6 +5,9 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 class ColorBox extends PureComponent {
   constructor(props) {
     super(props);
+    this.state = {
+      copied: false
+    };
     this.gatherIndividualColor = this.gatherIndividualColor.bind(this);
     this.copyInfo = this.copyInfo.bind(this);
   }
@@ -18,8 +21,17 @@ class ColorBox extends PureComponent {
     return (
       <div className="color" style={{ background: this.props.background }}>
         <div className="box-content">{this.props.name}</div>
-        <CopyToClipboard text={this.props.background}>
-          <button className="copy-button">Copy</button>
+        <CopyToClipboard
+          text={this.props.background}
+          onCopy={() =>
+            this.setState({ copied: true }, () => {
+              setTimeout(() => this.setState({ copied: false }), 1000);
+            })
+          }
+        >
+          <button className="copy-button">
+            {this.state.copied ? "Copied!" : "Copy"}
+          </button>
         </CopyToClipboard>
 
         {this.props.showingAllColors && (

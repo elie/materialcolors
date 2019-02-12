@@ -25,12 +25,7 @@ class NavBar extends Component {
     return (
       <div>
         <header>
-          <div className="logo">Material Color Picker</div>
-          <select value={this.state.value} onChange={this.handleChange}>
-            <option value="HEX - #1234EF">HEX - #1234EF</option>
-            <option value="RGB - (255,255,255)">RGB - (255,255,255)</option>
-            RGB - (12,12,12,1.0)
-          </select>
+          <div className="logo">Material Colors</div>
           {this.props.isShowingAllColors && (
             <div className="slider-container">
               <span>Level: {this.props.level}</span>
@@ -45,6 +40,11 @@ class NavBar extends Component {
               </div>
             </div>
           )}
+          <select value={this.state.value} onChange={this.handleChange}>
+            <option value="HEX - #1234EF">HEX - #1234EF</option>
+            <option value="RGB - (255,255,255)">RGB - (255,255,255)</option>
+            RGB - (12,12,12,1.0)
+          </select>
         </header>
       </div>
     );
