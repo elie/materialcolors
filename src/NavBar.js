@@ -32,7 +32,7 @@ class NavBar extends Component {
               <div className="slider">
                 <Slider
                   step={10}
-                  defaultValue={50}
+                  defaultValue={this.props.level / 10}
                   min={10}
                   max={90}
                   onAfterChange={this.changeColor}
