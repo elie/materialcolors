@@ -1,5 +1,25 @@
-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+.logo {
+    display: inline-block;
+    padding: 0 13px;
+    font-size: 22px;
+    background: #ECEFF1;
+    float: left;
+}
+
+.slider {
+    float: left;
+    height: 30px;
+    width: 340px;
+    margin: 10px;
+}
+
+.rc-slider-track {
+    background-color:transparent;
+}
+
+.rc-slider-handle,.rc-slider-handle:active, .rc-slider-handle:hover, .rc-slider-handle:hover {
+    background-color: green;
+    border: 2px solid green;
+    box-shadow: none;
 }

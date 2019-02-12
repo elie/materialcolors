@@ -22,11 +22,11 @@ class ColorBox extends PureComponent {
           <button className="copy-button">Copy</button>
         </CopyToClipboard>
 
-        <div className="see-more">
-          {this.props.showingAllColors && (
+        {this.props.showingAllColors && (
+          <div className="see-more">
             <span onClick={this.gatherIndividualColor}>MORE</span>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     );
   }

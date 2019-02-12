@@ -4,8 +4,6 @@ import React, { Component } from "react";
 import Slider from "rc-slider";
 import "./NavBar.css"
 
-const style = { width: 400, display: "inline-block", margin: "10px" };
-
 class NavBar extends Component {
   constructor(props) {
     super(props);
@@ -28,7 +26,7 @@ class NavBar extends Component {
     return (
       <div>
         <header>
-        <div className="navbar-brand">
+        <div className="logo">
           Material Color Picker
         </div>
           <select value={this.state.value} onChange={this.handleChange}>
@@ -37,7 +35,7 @@ class NavBar extends Component {
             RGB - (12,12,12,1.0)
           </select>
           {this.props.isShowingAllColors && (
-            <div style={style}>
+            <div className="slider">
               <Slider
                 step={10}
                 defaultValue={50}
