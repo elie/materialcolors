@@ -17,7 +17,7 @@ class App extends Component {
     this.showIndividualColor = this.showIndividualColor.bind(this);
     this.navigateBack = this.navigateBack.bind(this);
   }
-  navigateBack(){
+  navigateBack() {
     this.setState({
       showingAllColors: true,
       colors
@@ -31,7 +31,7 @@ class App extends Component {
   changeFormat(to) {
     this.setState({
       currentFormat: to === "hex" ? "rgb" : "hex"
-    })
+    });
   }
   showIndividualColor(colorToFilterBy) {
     let individualColors = [];
@@ -43,7 +43,7 @@ class App extends Component {
     }
     this.setState({
       showingAllColors: false,
-      colors: {[this.state.level]: individualColors }
+      colors: { [this.state.level]: individualColors }
     });
   }
   render() {
@@ -61,10 +61,17 @@ class App extends Component {
 
     return (
       <div>
-        <NavBar level={this.state.level} handleFormatChange={this.changeFormat} isShowingAllColors={this.state.showingAllColors} handleColorVal={this.changeColors} />
+        <NavBar
+          level={this.state.level}
+          handleFormatChange={this.changeFormat}
+          isShowingAllColors={this.state.showingAllColors}
+          handleColorVal={this.changeColors}
+        />
         <div className="App colors">{colorBoxes}</div>
         <div>
-          {!this.state.showingAllColors && <button onClick={this.navigateBack}>GO BACK</button>}
+          {!this.state.showingAllColors && (
+            <button onClick={this.navigateBack}>GO BACK</button>
+          )}
         </div>
       </div>
     );

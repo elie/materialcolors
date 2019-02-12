@@ -22,7 +22,6 @@ class NavBar extends Component {
     this.setState({ value: event.target.value });
   }
   render() {
-    console.log("STATE!", this.state)
     return (
       <div>
         <header>
