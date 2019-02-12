@@ -33,7 +33,7 @@ class ColorBox extends PureComponent {
           text={this.props.background}
           onCopy={this.changeCopyState}
         >
-          <div class="copy-container">
+          <div className="copy-container">
             <div className="box-content">{this.props.name}</div>
             <button className={currentClass}>
               {this.state.copied ? "Copied!" : "Copy"}
