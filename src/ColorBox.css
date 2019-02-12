@@ -1,6 +1,7 @@
 .color {
+  cursor: pointer;
   margin: 0 auto;
-  height: 120px;
+  height: 115px;
   display: inline-block;
   width: 20%;
   position: relative;
@@ -22,11 +23,11 @@
   border-radius: 0;
   opacity: 0;
   color: #fff;
-  cursor: pointer;
   text-transform: uppercase;
 }
 
-.copy-button:hover {
+.copy-button:hover,
+.copied {
   opacity: 1;
   transition: 0.5s;
   border: none;

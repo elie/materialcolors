@@ -10,6 +10,7 @@ class ColorBox extends PureComponent {
     };
     this.gatherIndividualColor = this.gatherIndividualColor.bind(this);
     this.copyInfo = this.copyInfo.bind(this);
+    this.changeCopyState = this.changeCopyState.bind(this);
   }
   gatherIndividualColor() {
     this.props.handleIndividualColor(this.props.individualColor);
@@ -17,27 +18,33 @@ class ColorBox extends PureComponent {
   copyInfo() {
     this.props.copy(this.props.background);
   }
+  changeCopyState() {
+    this.setState({ copied: true }, () => {
+      setTimeout(() => this.setState({ copied: false }), 1000);
+    });
+  }
   render() {
+    const currentClass = this.state.copied
+      ? "copy-button copied"
+      : "copy-button ";
     return (
       <div className="color" style={{ background: this.props.background }}>
-        <div className="box-content">{this.props.name}</div>
         <CopyToClipboard
           text={this.props.background}
-          onCopy={() =>
-            this.setState({ copied: true }, () => {
-              setTimeout(() => this.setState({ copied: false }), 1000);
-            })
-          }
+          onCopy={this.changeCopyState}
         >
-          <button className="copy-button">
-            {this.state.copied ? "Copied!" : "Copy"}
-          </button>
+          <div class="copy-container">
+            <div className="box-content">{this.props.name}</div>
+            <button className={currentClass}>
+              {this.state.copied ? "Copied!" : "Copy"}
+            </button>
+          </div>
         </CopyToClipboard>
 
         {this.props.showingAllColors && (
-          <div className="see-more">
-            <span onClick={this.gatherIndividualColor}>MORE</span>
-          </div>
+          <button className="see-more" onClick={this.gatherIndividualColor}>
+            MORE
+          </button>
         )}
       </div>
     );
