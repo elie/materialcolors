@@ -1,19 +1,22 @@
 body {
   -webkit-overflow-scrolling: touch;
-      overflow-x: hidden;
-      height: 100%;
+  overflow-x: hidden;
+  height: 100%;
 }
 
 .App {
   text-align: center;
 }
 
-
-.colors, .md-select *, .md-select :after, .md-select :before, .noUi-pips, .noUi-pips *, header .tweet, header .usepanda {
-    box-sizing: border-box;
-    clear: both;
+.colors,
+header {
+  box-sizing: border-box;
+  clear: both;
 }
 
-.colors, body, header, html {
-    min-width: 960px;
+.colors,
+body,
+header,
+html {
+  min-width: 960px;
 }

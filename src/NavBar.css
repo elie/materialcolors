@@ -6,8 +6,11 @@
     background: #ECEFF1;
     float: left;
 }
+.slider-container {
+  display: inline-block;
+}
 
-.slider {
+.slider { 
     float: left;
     height: 30px;
     width: 340px;
