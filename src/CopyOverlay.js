@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import "./CopyOverlay.css";
 
-class CopyOverlay extends Component {
+class CopyOverlay extends PureComponent {
   render() {
     return (
       <div
