@@ -73,7 +73,7 @@ class App extends Component {
           {colorBoxes}
           {this.state.showingAllColors && (
             <div className="logo-container color">
-              <img src={logo} className="App-logo" alt="logo" />
+              <img src={logo} alt="logo" />
             </div>
           )}
         </div>
