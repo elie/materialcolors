@@ -1,0 +1,17 @@
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 10000;
+  top: 44px;
+  left: 0;
+  opacity: 0.7;
+}
+
+.overlay-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-size: 102px;
+}

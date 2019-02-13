@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import "./App.css";
+import logo from "./logo.svg";
 import ColorBox from "./ColorBox";
 import NavBar from "./NavBar";
 import colors from "./colors";
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -67,7 +69,14 @@ class App extends Component {
           isShowingAllColors={this.state.showingAllColors}
           handleColorVal={this.changeColors}
         />
-        <div className="App colors">{colorBoxes}</div>
+        <div className="App colors">
+          {colorBoxes}
+          {this.state.showingAllColors && (
+            <div className="logo-container color">
+              <img src={logo} className="App-logo" alt="logo" />
+            </div>
+          )}
+        </div>
         <div>
           {!this.state.showingAllColors && (
             <div className="color back">

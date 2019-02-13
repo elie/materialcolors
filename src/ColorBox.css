@@ -1,13 +1,3 @@
-.color {
-  cursor: pointer;
-  margin: 0 auto;
-  height: 23vh;
-  display: inline-block;
-  width: 20%;
-  position: relative;
-  margin-bottom: -3.5px;
-}
-
 .copy-button {
   width: 100px;
   height: 30px;

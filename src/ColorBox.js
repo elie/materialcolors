@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import "./ColorBox.css";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import CopyOverlay from "./CopyOverlay";
 
 class ColorBox extends PureComponent {
   constructor(props) {
@@ -20,7 +21,7 @@ class ColorBox extends PureComponent {
   }
   changeCopyState() {
     this.setState({ copied: true }, () => {
-      setTimeout(() => this.setState({ copied: false }), 1000);
+      setTimeout(() => this.setState({ copied: false }), 1500);
     });
   }
   render() {
@@ -37,6 +38,9 @@ class ColorBox extends PureComponent {
             <div className="box-content">{this.props.name}</div>
             <button className={currentClass}>
               {this.state.copied ? "Copied!" : "Copy"}
+              {this.state.copied ? (
+                <CopyOverlay backgroundColor={this.props.background} />
+              ) : null}
             </button>
           </div>
         </CopyToClipboard>

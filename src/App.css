@@ -4,11 +4,41 @@ body {
   height: 100%;
 }
 
+.App-logo {
+  /* animation: App-logo-spin infinite 20s linear; */
+  height: 22.5vh;
+  pointer-events: none;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .colors,
 body,
 header,
 html {
   min-width: 960px;
+}
+
+.color {
+  cursor: pointer;
+  margin: 0 auto;
+  height: 23vh;
+  display: inline-block;
+  width: 20%;
+  position: relative;
+  margin-bottom: -3.5px;
+}
+
+.logo-container {
+  background: black;
+  text-align: center;
 }
 
 .copy-container {
